@@ -26,7 +26,8 @@ public class Foro_1 {
         do {
             System.out.println("\n===== MENU =====");
             System.out.println("1. Ingresar alumno");
-            System.out.println("2. Salir");
+            System.out.println("2. Buscar alumno");
+            System.out.println("3. Salir");
             System.out.print("Seleccione una opcion: ");
             opcion = Integer.parseInt(sc.nextLine());
 
@@ -35,6 +36,9 @@ public class Foro_1 {
                     ingresarAlumno();
                     break;
                 case 2:
+                    buscarAlumno();
+                    break;
+                case 3:
                     System.out.println("Saliendo...");
                     break;
                 default:
@@ -56,4 +60,16 @@ public class Foro_1 {
         System.out.println("Alumno ingresado exitosamente");
     }
     
+    public static void buscarAlumno() {
+        System.out.print("Ingrese el carnet a buscar: ");
+        String carnet = sc.nextLine();
+    
+        if (alumnos.containsKey(carnet)) {
+            System.out.println("Alumno encontrado:");
+            System.out.println("Carnet: " + carnet);
+            System.out.println("Nombre: " + alumnos.get(carnet));
+        } else {
+            System.out.println("Alumno no encontrado, no se puede Mostrar");
+        }
+    }
 }
