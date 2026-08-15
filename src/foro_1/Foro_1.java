@@ -16,7 +16,8 @@ public class Foro_1 {
             System.out.println("1. Ingresar alumno");
             System.out.println("2. Buscar alumno");
             System.out.println("3. Eliminar alumno");
-            System.out.println("4. Salir");
+            System.out.println("4. Mostrar todos los alumnos");
+            System.out.println("5. Salir");
             System.out.print("Seleccione una opcion: ");
             opcion = Integer.parseInt(sc.nextLine());
 
@@ -31,12 +32,15 @@ public class Foro_1 {
                     eliminarAlumno();
                     break;
                 case 4:
+                    mostrarTodos();
+                    break;
+                case 5:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opcion invalida");
             }
-        } while (opcion != 4);
+        } while (opcion != 5);
     }
 
     public static void ingresarAlumno() {
@@ -70,6 +74,17 @@ public class Foro_1 {
             System.out.println("Alumno eliminado exitosamente");
         } else {
             System.out.println("Alumno no encontrado, No se puede Eliminar");
+        }
+    }
+
+    public static void mostrarTodos() {
+        if (alumnos.isEmpty()) {
+            System.out.println("No hay alumnos registrados.");
+        } else {
+            System.out.println("Lista de alumnos:");
+            for (Map.Entry<String, String> entry : alumnos.entrySet()) {
+                System.out.println("Carnet: " + entry.getKey() + " - Nombre: " + entry.getValue());
+            }
         }
     }
 }
