@@ -22,6 +22,7 @@ Ejemplo:
 Carnet → Nombre completo
 
 CD260338 → Adriana Liseyda Cortez de la Cruz
+
 SG260385 → Marlon Enrique Santiago Garcia
 
 ## Funcionalidades
